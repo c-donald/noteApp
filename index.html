@@ -3,6 +3,14 @@
 <html>
 
 <head>
+    <script>
+        var httpServer = require("http-server");
+        var path = require("path");
+
+        var pathToHtmlAndJsFiles = path.join(__dirname, "path/from/current/dir/to/html/and/js/files");
+        var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
+        server.listen(3000);
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -14,12 +22,13 @@
     <script src="src/note-model.js" async defer></script>
     <script src="src/note-list-model.js" async defer></script>
     <script src="src/note-list-view.js" async defer></script>
+    <script src="src/note-controller.js" async defer></script>
     <script src="spec/assert.js" async defer></script>
     <!-- include source files here... -->
     <script src="spec/noteSpec.js" async defer></script>
     <script src="spec/noteListSpec.js" async defer></script>
     <script src="spec/noteViewSpec.js" async defer></script>
-
+    <script src="spec/noteControllerSpec.js" async defer></script>
 </head>
 
 <body>
