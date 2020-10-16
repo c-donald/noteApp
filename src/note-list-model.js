@@ -1,14 +1,14 @@
-class NoteList{
-    constructor(){
+class NoteList {
+    constructor() {
         this.list = []
     }
 
 
-    returnList(){
+    returnList() {
         return this.list
     }
 
-    create(string){
+    create(string) {
         var note = new Note(string)
         this.list.push(note.returnText())
     }

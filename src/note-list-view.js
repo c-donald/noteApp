@@ -1,10 +1,10 @@
 class NoteListView {
     constructor(noteList) {
-        this.noteList = noteList
+        this.note = noteList
     }
 
     returnListView() {
-        return this.noteList.returnList();
+        return this.note.returnList();
     }
 
 
@@ -13,7 +13,7 @@ class NoteListView {
         var html = []
 
         for (var i = 0; i < listView.length; i++) {
-            html.push("<li><div>" + listView[i] + "</div></li>")
+            html.push("<li><div>" + listView[i].slice(0, 20) + "</div></li>")
         }
 
         return ("<ul>" + html.join("") + "</ul>")
