@@ -4,7 +4,7 @@ class SingleNoteView {
     }
 
     displayView() {
-        return `<div>${this.note}</div>`
+        return `<div>${this.note.text}</div>`
     }
 }
 

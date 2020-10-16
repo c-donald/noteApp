@@ -21,17 +21,27 @@ class NoteMocking {
         this.text = string
     }
 }
-
-class NoteListMock {
-    constructor(note) {
-        this.note = [note]
+class NoteListMocking {
+    constructor() {
+        this.list = []
     }
+
+
+    returnList() {
+        return this.list
+    }
+
+    create(string) {
+        var note = new Note(string)
+        this.list.push(note.returnText())
+    }
+
 }
 
 (function () {
-    note = new Note('Can this Mock pass with 20 characters')
-    noteList = new NoteList(note)
-    noteListView = new NoteListView(noteList)
+    notelist = new NoteListMocking
+    notelist.create('Can this Mock pass with 20 characters')
+    noteListView = new NoteListView(notelist)
     //console.log(noteListView.outputToHtml())
     assert(noteListView.outputToHtml() == '<ul><li><div>Can this Mock pass w</div></li></ul>', 'This Test check the outpuToHtml returns the first 20 characters in html')
 
