@@ -16,11 +16,11 @@ function createNoteList() {
 returnList();
 createNoteList();
 // created fake classes to test our function
-class NoteMocking {
+/*class NoteMocking {
     constructor(string) {
         this.text = string
     }
-}
+}*/
 class NoteListMocking {
     constructor() {
         this.list = []
